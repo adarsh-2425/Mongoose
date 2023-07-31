@@ -14,8 +14,18 @@ async function getData() {
   console.log(data);
 }
 
-//calling function
-getData();
+//add data
+async function addData() {
+  try{
+    const data = await User.create({name: 'Patrick Jane', age: 45});
+    console.log('data successfully saved');
+  } catch(err) {
+    console.error(err.message);
+  }
+}
+
+//call your funtion here
+//eg: addData();
 
 //listen
 app.listen(3000, () => {
